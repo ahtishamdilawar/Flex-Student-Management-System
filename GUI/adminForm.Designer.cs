@@ -286,6 +286,7 @@
             depBox.Name = "depBox";
             depBox.Size = new Size(132, 23);
             depBox.TabIndex = 35;
+            depBox.SelectedIndexChanged += depBox_SelectedIndexChanged;
             // 
             // Adresstxt
             // 
@@ -1198,7 +1199,6 @@
         private TextBox lastNameTeacherTxt;
         private Label label8;
         private TextBox FNameTeacherTxt;
-        private Button AddTeacherbtn;
         private Label label9;
         private TextBox salaryTxt;
         private ComboBox depTeacherCombo;
@@ -1224,5 +1224,6 @@
         private Label label1;
         private Button FindEditTeacherBtn;
         private TextBox TIDEditTeacherTxt;
+        private Button AddTeacherbtn;
     }
 }
