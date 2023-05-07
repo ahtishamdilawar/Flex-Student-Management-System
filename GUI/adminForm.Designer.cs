@@ -104,24 +104,24 @@
             label11 = new Label();
             dataGridView2 = new DataGridView();
             tabPage6 = new TabPage();
+            panel4 = new Panel();
+            SalaryTeacherEditTxt = new TextBox();
+            label16 = new Label();
+            QualificationEditTeacherTxt = new TextBox();
+            UpdateEditTeacherBtn = new Button();
+            label10 = new Label();
+            AddressEditTeacherTxt = new TextBox();
+            label12 = new Label();
+            ContactEditTeacherTxt = new TextBox();
+            label13 = new Label();
+            LNameEditTeacherTxt = new TextBox();
+            label14 = new Label();
+            FNameEditTeacherTxt = new TextBox();
+            label15 = new Label();
             panel3 = new Panel();
             label1 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            panel4 = new Panel();
-            button2 = new Button();
-            label10 = new Label();
-            textBox4 = new TextBox();
-            label12 = new Label();
-            textBox5 = new TextBox();
-            label13 = new Label();
-            textBox6 = new TextBox();
-            label14 = new Label();
-            textBox7 = new TextBox();
-            label15 = new Label();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            label16 = new Label();
+            FindEditTeacherBtn = new Button();
+            TIDEditTeacherTxt = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -135,8 +135,8 @@
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage6.SuspendLayout();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // viewCombo
@@ -906,11 +906,150 @@
             tabPage6.Text = "Edit Teacher";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(SalaryTeacherEditTxt);
+            panel4.Controls.Add(label16);
+            panel4.Controls.Add(QualificationEditTeacherTxt);
+            panel4.Controls.Add(UpdateEditTeacherBtn);
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(AddressEditTeacherTxt);
+            panel4.Controls.Add(label12);
+            panel4.Controls.Add(ContactEditTeacherTxt);
+            panel4.Controls.Add(label13);
+            panel4.Controls.Add(LNameEditTeacherTxt);
+            panel4.Controls.Add(label14);
+            panel4.Controls.Add(FNameEditTeacherTxt);
+            panel4.Controls.Add(label15);
+            panel4.Location = new Point(212, 9);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(363, 339);
+            panel4.TabIndex = 5;
+            // 
+            // SalaryTeacherEditTxt
+            // 
+            SalaryTeacherEditTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            SalaryTeacherEditTxt.Location = new Point(151, 227);
+            SalaryTeacherEditTxt.Name = "SalaryTeacherEditTxt";
+            SalaryTeacherEditTxt.Size = new Size(132, 25);
+            SalaryTeacherEditTxt.TabIndex = 47;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(98, 230);
+            label16.Name = "label16";
+            label16.Size = new Size(46, 17);
+            label16.TabIndex = 46;
+            label16.Text = "Salary:";
+            // 
+            // QualificationEditTeacherTxt
+            // 
+            QualificationEditTeacherTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            QualificationEditTeacherTxt.Location = new Point(151, 191);
+            QualificationEditTeacherTxt.Name = "QualificationEditTeacherTxt";
+            QualificationEditTeacherTxt.Size = new Size(132, 25);
+            QualificationEditTeacherTxt.TabIndex = 45;
+            // 
+            // UpdateEditTeacherBtn
+            // 
+            UpdateEditTeacherBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            UpdateEditTeacherBtn.Location = new Point(151, 266);
+            UpdateEditTeacherBtn.Name = "UpdateEditTeacherBtn";
+            UpdateEditTeacherBtn.Size = new Size(132, 57);
+            UpdateEditTeacherBtn.TabIndex = 44;
+            UpdateEditTeacherBtn.Text = "Update";
+            UpdateEditTeacherBtn.UseVisualStyleBackColor = true;
+            UpdateEditTeacherBtn.Click += UpdateEditTeacherBtn_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(65, 194);
+            label10.Name = "label10";
+            label10.Size = new Size(83, 17);
+            label10.TabIndex = 43;
+            label10.Text = "Qualification:";
+            // 
+            // AddressEditTeacherTxt
+            // 
+            AddressEditTeacherTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            AddressEditTeacherTxt.Location = new Point(151, 154);
+            AddressEditTeacherTxt.Name = "AddressEditTeacherTxt";
+            AddressEditTeacherTxt.Size = new Size(132, 25);
+            AddressEditTeacherTxt.TabIndex = 33;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(85, 157);
+            label12.Name = "label12";
+            label12.Size = new Size(59, 17);
+            label12.TabIndex = 32;
+            label12.Text = "Address:";
+            // 
+            // ContactEditTeacherTxt
+            // 
+            ContactEditTeacherTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ContactEditTeacherTxt.Location = new Point(151, 109);
+            ContactEditTeacherTxt.Name = "ContactEditTeacherTxt";
+            ContactEditTeacherTxt.Size = new Size(132, 25);
+            ContactEditTeacherTxt.TabIndex = 31;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(71, 112);
+            label13.Name = "label13";
+            label13.Size = new Size(77, 17);
+            label13.TabIndex = 30;
+            label13.Text = "Contact No:";
+            // 
+            // LNameEditTeacherTxt
+            // 
+            LNameEditTeacherTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            LNameEditTeacherTxt.Location = new Point(151, 66);
+            LNameEditTeacherTxt.Name = "LNameEditTeacherTxt";
+            LNameEditTeacherTxt.Size = new Size(132, 25);
+            LNameEditTeacherTxt.TabIndex = 29;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(71, 66);
+            label14.Name = "label14";
+            label14.Size = new Size(73, 17);
+            label14.TabIndex = 28;
+            label14.Text = "Last Name:";
+            // 
+            // FNameEditTeacherTxt
+            // 
+            FNameEditTeacherTxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            FNameEditTeacherTxt.Location = new Point(151, 16);
+            FNameEditTeacherTxt.Name = "FNameEditTeacherTxt";
+            FNameEditTeacherTxt.Size = new Size(132, 25);
+            FNameEditTeacherTxt.TabIndex = 27;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(70, 20);
+            label15.Name = "label15";
+            label15.Size = new Size(74, 17);
+            label15.TabIndex = 26;
+            label15.Text = "First Name:";
+            // 
             // panel3
             // 
             panel3.Controls.Add(label1);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(textBox1);
+            panel3.Controls.Add(FindEditTeacherBtn);
+            panel3.Controls.Add(TIDEditTeacherTxt);
             panel3.Location = new Point(6, 6);
             panel3.Name = "panel3";
             panel3.Size = new Size(206, 96);
@@ -926,160 +1065,23 @@
             label1.TabIndex = 0;
             label1.Text = "TID:";
             // 
-            // button1
+            // FindEditTeacherBtn
             // 
-            button1.Location = new Point(97, 49);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 26);
-            button1.TabIndex = 2;
-            button1.Text = "FIND";
-            button1.UseVisualStyleBackColor = true;
+            FindEditTeacherBtn.Location = new Point(97, 49);
+            FindEditTeacherBtn.Name = "FindEditTeacherBtn";
+            FindEditTeacherBtn.Size = new Size(100, 26);
+            FindEditTeacherBtn.TabIndex = 2;
+            FindEditTeacherBtn.Text = "FIND";
+            FindEditTeacherBtn.UseVisualStyleBackColor = true;
+            FindEditTeacherBtn.Click += FindEditTeacherBtn_Click;
             // 
-            // textBox1
+            // TIDEditTeacherTxt
             // 
-            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(66, 7);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(131, 27);
-            textBox1.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(textBox9);
-            panel4.Controls.Add(label16);
-            panel4.Controls.Add(textBox8);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(textBox4);
-            panel4.Controls.Add(label12);
-            panel4.Controls.Add(textBox5);
-            panel4.Controls.Add(label13);
-            panel4.Controls.Add(textBox6);
-            panel4.Controls.Add(label14);
-            panel4.Controls.Add(textBox7);
-            panel4.Controls.Add(label15);
-            panel4.Location = new Point(212, 9);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(363, 339);
-            panel4.TabIndex = 5;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(151, 266);
-            button2.Name = "button2";
-            button2.Size = new Size(132, 57);
-            button2.TabIndex = 44;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(65, 194);
-            label10.Name = "label10";
-            label10.Size = new Size(83, 17);
-            label10.TabIndex = 43;
-            label10.Text = "Qualification:";
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(151, 154);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(132, 25);
-            textBox4.TabIndex = 33;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(85, 157);
-            label12.Name = "label12";
-            label12.Size = new Size(59, 17);
-            label12.TabIndex = 32;
-            label12.Text = "Address:";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(151, 109);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(132, 25);
-            textBox5.TabIndex = 31;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(71, 112);
-            label13.Name = "label13";
-            label13.Size = new Size(77, 17);
-            label13.TabIndex = 30;
-            label13.Text = "Contact No:";
-            // 
-            // textBox6
-            // 
-            textBox6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(151, 66);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(132, 25);
-            textBox6.TabIndex = 29;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(71, 66);
-            label14.Name = "label14";
-            label14.Size = new Size(73, 17);
-            label14.TabIndex = 28;
-            label14.Text = "Last Name:";
-            // 
-            // textBox7
-            // 
-            textBox7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(151, 16);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(132, 25);
-            textBox7.TabIndex = 27;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(70, 20);
-            label15.Name = "label15";
-            label15.Size = new Size(74, 17);
-            label15.TabIndex = 26;
-            label15.Text = "First Name:";
-            // 
-            // textBox8
-            // 
-            textBox8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.Location = new Point(151, 191);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(132, 25);
-            textBox8.TabIndex = 45;
-            // 
-            // textBox9
-            // 
-            textBox9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox9.Location = new Point(151, 227);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(132, 25);
-            textBox9.TabIndex = 47;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(65, 230);
-            label16.Name = "label16";
-            label16.Size = new Size(83, 17);
-            label16.TabIndex = 46;
-            label16.Text = "Qualification:";
+            TIDEditTeacherTxt.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TIDEditTeacherTxt.Location = new Point(66, 7);
+            TIDEditTeacherTxt.Name = "TIDEditTeacherTxt";
+            TIDEditTeacherTxt.Size = new Size(131, 27);
+            TIDEditTeacherTxt.TabIndex = 1;
             // 
             // adminForm
             // 
@@ -1115,10 +1117,10 @@
             tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage6.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1205,22 +1207,22 @@
         private DataGridView dataGridView2;
         private TabPage tabPage6;
         private Panel panel4;
-        private TextBox textBox9;
+        private TextBox SalaryTeacherEditTxt;
         private Label label16;
-        private TextBox textBox8;
-        private Button button2;
+        private TextBox QualificationEditTeacherTxt;
+        private Button UpdateEditTeacherBtn;
         private Label label10;
-        private TextBox textBox4;
+        private TextBox AddressEditTeacherTxt;
         private Label label12;
-        private TextBox textBox5;
+        private TextBox ContactEditTeacherTxt;
         private Label label13;
-        private TextBox textBox6;
+        private TextBox LNameEditTeacherTxt;
         private Label label14;
-        private TextBox textBox7;
+        private TextBox FNameEditTeacherTxt;
         private Label label15;
         private Panel panel3;
         private Label label1;
-        private Button button1;
-        private TextBox textBox1;
+        private Button FindEditTeacherBtn;
+        private TextBox TIDEditTeacherTxt;
     }
 }

@@ -1,3 +1,4 @@
 TID,First Name,Last Name,Department Name,Gender,Contact Number,Address,Qualification,Salary,Registration Date
-EET-0001,a,a,Electric Engineering,M,a,a,a,a,06/05/2023
-CST-0001,a,s,Computer Science,M,a,s,a,s,06/05/2023
+EET-0001,Adil,Zulfiqar,Electric Engineering,M,12349876,LoonayWala,PHD,80000,06/05/2023
+CST-0001,Arjit,Singh,Computer Science,M,123232,INDIA,FSc,80000,06/05/2023
+CST-0002,Muiz,Qadir,Computer Science,M,+92 347 4217991,CFD,Masters,100000,07/05/2023

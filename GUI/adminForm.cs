@@ -518,6 +518,7 @@ namespace GUI
                 WriteTeachersToCsv(teacherFile, teachers);
                 WriteUsernamePassToTxt(teacherLoginFile, t);
                 MessageBox.Show("Teacher Added Successfully", "SUCESS");
+                dataGridView2.DataSource = ShowTeacherData();//UPDATE THE VIEW TEACHER TABLE
             }
         }
         //GENERATE TEACHER ID
@@ -630,97 +631,91 @@ namespace GUI
             }
             return dataTable;
         }
-        //LOADS THE TEACHER DATA IN THE DATAGRIDVIEW
+        //LOADS THE TEACHER DATA IN THE DATAGRIDVIEW and All Student Data 
+        //in the view student table
         private void adminForm_Load(object sender, EventArgs e)
         {
             dataGridView2.DataSource = ShowTeacherData();
+            dataGridView1.DataSource = ShowStudentData();
+            viewCombo.SelectedIndex = 0;
         }
 
 
 
 
 
-        ///////EDIT STUDENT DATA////
+        ///////EDIT TEACHER DATA////
         ///////////////////////////
         //////////////////////////
-        //private void editstdbtn_Click(object sender, EventArgs e)
-        //{
-        //    List<Student> students = ReadStudentsFromCsv();
-        //    string rollNo = rollNoEdittxt.Text;
-        //    bool check = false;
-        //    int index = 0;
-        //    for (int i = 0; i < students.Count(); i++)
-        //    {
-        //        if (students[i].getRollNo() == rollNo.ToUpper())
-        //        {
-        //            index = i;
-        //            check = true;
-        //            break;
-        //        }
-        //    }
-        //    if (!check)
-        //    {
-        //        MessageBox.Show("No Student Found");
-        //    }
-        //    else
-        //    {
-        //        FNameEditTxt.Text = students[index].getFirstName();
-        //        LNameEditTxt.Text = students[index].getLastName();
-        //        ContactEditTxt.Text = students[index].getContactNo();
-        //        AdressEditTxt.Text = students[index].getAddress();
-        //        if (students[index].getFeeStatus() == "Paid")
-        //        {
-        //            PaidEditBtn.Checked = true;
-        //        }
-        //        else
-        //        {
-        //            unpaidbtn.Checked = true;
-        //        }
-        //    }
-        //}
+        
+        private void FindEditTeacherBtn_Click(object sender, EventArgs e)
+        {
+           
 
-        //private void UpdateBtn_Click(object sender, EventArgs e)
-        //{
-        //    List<Student> students = ReadStudentsFromCsv();
-        //    string rollNo = rollNoEdittxt.Text;
-        //    bool check = false;
-        //    int index = 0;
-        //    for (int i = 0; i < students.Count(); i++)
-        //    {
-        //        if (students[i].getRollNo() == rollNo.ToUpper())
-        //        {
-        //            index = i;
-        //            check = true;
-        //            break;
-        //        }
-        //    }
-        //    if (!check)
-        //    {
-        //        MessageBox.Show("No Student Found");
-        //    }
-        //    else
-        //    {
-        //        students[index].setFirstName(FNameEditTxt.Text);
-        //        students[index].setLastName(LNameEditTxt.Text);
-        //        students[index].setContactNo(ContactEditTxt.Text);
-        //        students[index].setAddress(AdressEditTxt.Text);
-        //        if (PaidEditBtn.Checked)
-        //        {
-        //            students[index].setFeeStatus(true);
-        //        }
-        //        else
-        //        {
-        //            students[index].setFeeStatus(false);
-        //        }
-        //        WriteStudentsToCsv(stdFile, students);
-        //        MessageBox.Show("Student Updated");
-        //    }
+            List<Teacher> teachers = ReadTeachersFromCsv();
+            string TID = TIDEditTeacherTxt.Text;
+            bool check1 = false;
+            int index1 = 0;
+            for (int i = 0; i < teachers.Count(); i++)
+            {
+                if (teachers[i].getTID() == TID.ToUpper())
+                {
+                    index1 = i;
+                    check1 = true;
+                    break;
+                }
+            }
+            if (!check1)
+            {
+                MessageBox.Show("No Teacher Found");
+            }
+            else
+            {
+                FNameEditTeacherTxt.Text = teachers[index1].getFirstName();
+                LNameEditTeacherTxt.Text = teachers[index1].getLastName();
+                ContactEditTeacherTxt.Text = teachers[index1].getContactNo();
+                AddressEditTeacherTxt.Text = teachers[index1].getAddress();
+                QualificationEditTeacherTxt.Text = teachers[index1].getQualification();
+                SalaryTeacherEditTxt.Text = teachers[index1].getSalary();
+            }
+
+        }
+
+        private void UpdateEditTeacherBtn_Click(object sender, EventArgs e)
+        {
+            
+            List<Teacher> teachers = ReadTeachersFromCsv();
+            string TID = TIDEditTeacherTxt.Text;
+            bool check1 = false;
+            int index1 = 0;
+            for (int i = 0; i < teachers.Count(); i++)
+            {
+                if (teachers[i].getTID() == TID.ToUpper())
+                {
+                    index1 = i;
+                    check1 = true;
+                    break;
+                }
+            }
+            if (!check1)
+            {
+                MessageBox.Show("No Teacher Found");
+            }
+            else
+            {
+                teachers[index1].setFirstName(FNameEditTeacherTxt.Text);
+                teachers[index1].setLastName(LNameEditTeacherTxt.Text);
+                teachers[index1].setContactNo(ContactEditTeacherTxt.Text);
+                teachers[index1].setAddress(AddressEditTeacherTxt.Text);
+                teachers[index1].setQualification(QualificationEditTeacherTxt.Text);
+                teachers[index1].setSalary(SalaryTeacherEditTxt.Text);
+                WriteTeachersToCsv(teacherFile, teachers);
+                MessageBox.Show("Teacher Updated");
+                dataGridView2.DataSource = ShowTeacherData();//UPDATE THE VIEW TEACHER TABLE
+            }
 
 
-        //}
-
-
-
+        }
 
 
 
@@ -735,7 +730,6 @@ namespace GUI
             }
         }
 
-
         public static void WriteUsernamePassToTxt(string filename, Teacher std)
         {
             using (StreamWriter writer = new StreamWriter(filename))
@@ -744,7 +738,7 @@ namespace GUI
             }
         }
 
-
+        
     }
 }
 
