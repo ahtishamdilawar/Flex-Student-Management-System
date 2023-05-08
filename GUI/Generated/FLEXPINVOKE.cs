@@ -399,6 +399,12 @@ class FLEXPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("FLEX", EntryPoint="CSharp_new_Teacher__SWIG_10")]
   public static extern global::System.IntPtr new_Teacher__SWIG_10();
 
+  [global::System.Runtime.InteropServices.DllImport("FLEX", EntryPoint="CSharp_Teacher_setCourse")]
+  public static extern void Teacher_setCourse(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("FLEX", EntryPoint="CSharp_Teacher_getCourse")]
+  public static extern string Teacher_getCourse(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("FLEX", EntryPoint="CSharp_Teacher_setTID")]
   public static extern void Teacher_setTID(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 

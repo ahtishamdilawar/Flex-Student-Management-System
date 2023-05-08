@@ -32,6 +32,8 @@
             viewCombo = new ComboBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label18 = new Label();
+            courseBox = new CheckedListBox();
             panel1 = new Panel();
             malebtn = new RadioButton();
             femalebtn = new RadioButton();
@@ -81,6 +83,8 @@
             searchbtn = new Button();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
+            label17 = new Label();
+            courseTxt = new ComboBox();
             depTeacherCombo = new ComboBox();
             salaryTxt = new TextBox();
             panel2 = new Panel();
@@ -166,6 +170,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(label18);
+            tabPage1.Controls.Add(courseBox);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(feeLbl);
             tabPage1.Controls.Add(unpaidbtn);
@@ -194,11 +200,29 @@
             tabPage1.Text = "Add Student";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(329, 189);
+            label18.Name = "label18";
+            label18.Size = new Size(52, 15);
+            label18.TabIndex = 43;
+            label18.Text = "Courses:";
+            // 
+            // courseBox
+            // 
+            courseBox.FormattingEnabled = true;
+            courseBox.Items.AddRange(new object[] { "DLD", "Linear Algebra", "OOP", "PF", "Calculus" });
+            courseBox.Location = new Point(395, 189);
+            courseBox.Name = "courseBox";
+            courseBox.Size = new Size(132, 94);
+            courseBox.TabIndex = 42;
+            // 
             // panel1
             // 
             panel1.Controls.Add(malebtn);
             panel1.Controls.Add(femalebtn);
-            panel1.Location = new Point(113, 173);
+            panel1.Location = new Point(116, 151);
             panel1.Name = "panel1";
             panel1.Size = new Size(132, 32);
             panel1.TabIndex = 41;
@@ -228,7 +252,7 @@
             // feeLbl
             // 
             feeLbl.AutoSize = true;
-            feeLbl.Location = new Point(313, 177);
+            feeLbl.Location = new Point(318, 159);
             feeLbl.Name = "feeLbl";
             feeLbl.Size = new Size(63, 15);
             feeLbl.TabIndex = 40;
@@ -237,7 +261,7 @@
             // unpaidbtn
             // 
             unpaidbtn.AutoSize = true;
-            unpaidbtn.Location = new Point(462, 175);
+            unpaidbtn.Location = new Point(467, 157);
             unpaidbtn.Name = "unpaidbtn";
             unpaidbtn.Size = new Size(63, 19);
             unpaidbtn.TabIndex = 39;
@@ -248,7 +272,7 @@
             // paidbtn
             // 
             paidbtn.AutoSize = true;
-            paidbtn.Location = new Point(393, 175);
+            paidbtn.Location = new Point(398, 157);
             paidbtn.Name = "paidbtn";
             paidbtn.Size = new Size(48, 19);
             paidbtn.TabIndex = 38;
@@ -262,7 +286,7 @@
             bloodbox.DropDownStyle = ComboBoxStyle.DropDownList;
             bloodbox.FormattingEnabled = true;
             bloodbox.Items.AddRange(new object[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" });
-            bloodbox.Location = new Point(393, 139);
+            bloodbox.Location = new Point(395, 114);
             bloodbox.Name = "bloodbox";
             bloodbox.Size = new Size(132, 23);
             bloodbox.TabIndex = 37;
@@ -270,7 +294,7 @@
             // bloodGrouplbl
             // 
             bloodGrouplbl.AutoSize = true;
-            bloodGrouplbl.Location = new Point(310, 144);
+            bloodGrouplbl.Location = new Point(312, 119);
             bloodGrouplbl.Name = "bloodGrouplbl";
             bloodGrouplbl.Size = new Size(77, 15);
             bloodGrouplbl.TabIndex = 36;
@@ -282,7 +306,7 @@
             depBox.DropDownStyle = ComboBoxStyle.DropDownList;
             depBox.FormattingEnabled = true;
             depBox.Items.AddRange(new object[] { "Computer Science", "Electric Engineering", "Software Engineering", "Business", "Social Sciences" });
-            depBox.Location = new Point(393, 105);
+            depBox.Location = new Point(395, 80);
             depBox.Name = "depBox";
             depBox.Size = new Size(132, 23);
             depBox.TabIndex = 35;
@@ -290,15 +314,16 @@
             // 
             // Adresstxt
             // 
-            Adresstxt.Location = new Point(113, 211);
+            Adresstxt.Location = new Point(113, 189);
+            Adresstxt.Multiline = true;
             Adresstxt.Name = "Adresstxt";
-            Adresstxt.Size = new Size(412, 23);
+            Adresstxt.Size = new Size(135, 45);
             Adresstxt.TabIndex = 34;
             // 
             // adresslbl
             // 
             adresslbl.AutoSize = true;
-            adresslbl.Location = new Point(26, 214);
+            adresslbl.Location = new Point(48, 192);
             adresslbl.Name = "adresslbl";
             adresslbl.Size = new Size(45, 15);
             adresslbl.TabIndex = 33;
@@ -306,7 +331,7 @@
             // 
             // qualiftxt
             // 
-            qualiftxt.Location = new Point(113, 144);
+            qualiftxt.Location = new Point(116, 122);
             qualiftxt.Name = "qualiftxt";
             qualiftxt.Size = new Size(132, 23);
             qualiftxt.TabIndex = 32;
@@ -314,7 +339,7 @@
             // qualiflbl
             // 
             qualiflbl.AutoSize = true;
-            qualiflbl.Location = new Point(23, 144);
+            qualiflbl.Location = new Point(15, 122);
             qualiflbl.Name = "qualiflbl";
             qualiflbl.Size = new Size(78, 15);
             qualiflbl.TabIndex = 31;
@@ -323,7 +348,7 @@
             // gndrlbl
             // 
             gndrlbl.AutoSize = true;
-            gndrlbl.Location = new Point(23, 177);
+            gndrlbl.Location = new Point(45, 155);
             gndrlbl.Name = "gndrlbl";
             gndrlbl.Size = new Size(48, 15);
             gndrlbl.TabIndex = 30;
@@ -332,7 +357,7 @@
             // Deplbl
             // 
             Deplbl.AutoSize = true;
-            Deplbl.Location = new Point(313, 105);
+            Deplbl.Location = new Point(315, 80);
             Deplbl.Name = "Deplbl";
             Deplbl.Size = new Size(73, 15);
             Deplbl.TabIndex = 28;
@@ -340,7 +365,7 @@
             // 
             // ContactTxt
             // 
-            ContactTxt.Location = new Point(113, 102);
+            ContactTxt.Location = new Point(116, 80);
             ContactTxt.Name = "ContactTxt";
             ContactTxt.Size = new Size(132, 23);
             ContactTxt.TabIndex = 27;
@@ -348,7 +373,7 @@
             // Contactlbl
             // 
             Contactlbl.AutoSize = true;
-            Contactlbl.Location = new Point(23, 105);
+            Contactlbl.Location = new Point(26, 83);
             Contactlbl.Name = "Contactlbl";
             Contactlbl.Size = new Size(71, 15);
             Contactlbl.TabIndex = 26;
@@ -356,7 +381,7 @@
             // 
             // lNametxt
             // 
-            lNametxt.Location = new Point(393, 65);
+            lNametxt.Location = new Point(395, 40);
             lNametxt.Name = "lNametxt";
             lNametxt.Size = new Size(132, 23);
             lNametxt.TabIndex = 25;
@@ -364,7 +389,7 @@
             // lNamelbl
             // 
             lNamelbl.AutoSize = true;
-            lNamelbl.Location = new Point(313, 65);
+            lNamelbl.Location = new Point(315, 40);
             lNamelbl.Name = "lNamelbl";
             lNamelbl.Size = new Size(66, 15);
             lNamelbl.TabIndex = 24;
@@ -372,16 +397,16 @@
             // 
             // fnametxt
             // 
-            fnametxt.Location = new Point(113, 62);
+            fnametxt.Location = new Point(116, 40);
             fnametxt.Name = "fnametxt";
             fnametxt.Size = new Size(132, 23);
             fnametxt.TabIndex = 22;
             // 
             // addStdBtn
             // 
-            addStdBtn.Location = new Point(182, 260);
+            addStdBtn.Location = new Point(182, 274);
             addStdBtn.Name = "addStdBtn";
-            addStdBtn.Size = new Size(182, 53);
+            addStdBtn.Size = new Size(167, 56);
             addStdBtn.TabIndex = 21;
             addStdBtn.Text = "Add Student";
             addStdBtn.UseVisualStyleBackColor = true;
@@ -390,7 +415,7 @@
             // fNameLbl
             // 
             fNameLbl.AutoSize = true;
-            fNameLbl.Location = new Point(23, 65);
+            fNameLbl.Location = new Point(26, 43);
             fNameLbl.Name = "fNameLbl";
             fNameLbl.Size = new Size(67, 15);
             fNameLbl.TabIndex = 20;
@@ -673,6 +698,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label17);
+            tabPage2.Controls.Add(courseTxt);
             tabPage2.Controls.Add(depTeacherCombo);
             tabPage2.Controls.Add(salaryTxt);
             tabPage2.Controls.Add(panel2);
@@ -698,6 +725,25 @@
             tabPage2.Text = "Add Teacher";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(340, 134);
+            label17.Name = "label17";
+            label17.Size = new Size(47, 15);
+            label17.TabIndex = 65;
+            label17.Text = "Course:";
+            // 
+            // courseTxt
+            // 
+            courseTxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            courseTxt.FormattingEnabled = true;
+            courseTxt.Items.AddRange(new object[] { "DLD", "LA", "OOP", "PF", "Calculus" });
+            courseTxt.Location = new Point(407, 131);
+            courseTxt.Name = "courseTxt";
+            courseTxt.Size = new Size(132, 23);
+            courseTxt.TabIndex = 64;
+            // 
             // depTeacherCombo
             // 
             depTeacherCombo.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -710,7 +756,7 @@
             // 
             // salaryTxt
             // 
-            salaryTxt.Location = new Point(407, 139);
+            salaryTxt.Location = new Point(407, 209);
             salaryTxt.Name = "salaryTxt";
             salaryTxt.Size = new Size(132, 23);
             salaryTxt.TabIndex = 62;
@@ -719,7 +765,7 @@
             // 
             panel2.Controls.Add(MaleTeacherTxt);
             panel2.Controls.Add(FemaleTeacherTxt);
-            panel2.Location = new Point(407, 182);
+            panel2.Location = new Point(407, 171);
             panel2.Name = "panel2";
             panel2.Size = new Size(132, 32);
             panel2.TabIndex = 61;
@@ -749,7 +795,7 @@
             // salaryLbl
             // 
             salaryLbl.AutoSize = true;
-            salaryLbl.Location = new Point(343, 142);
+            salaryLbl.Location = new Point(340, 212);
             salaryLbl.Name = "salaryLbl";
             salaryLbl.Size = new Size(41, 15);
             salaryLbl.TabIndex = 60;
@@ -791,7 +837,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(336, 190);
+            label5.Location = new Point(336, 179);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
             label5.TabIndex = 50;
@@ -1151,7 +1197,7 @@
         private Label feeLbl;
         private RadioButton unpaidbtn;
         private RadioButton paidbtn;
-        private TextBox textBox2;
+
         private TextBox textBox3;
         private Panel panel1;
         private TabPage tabPage3;
@@ -1185,7 +1231,7 @@
         private RadioButton MaleTeacherTxt;
         private RadioButton FemaleTeacherTxt;
         private Label salaryLbl;
-        private ComboBox bloodTTxt;
+
         private Label label2;
         private ComboBox comboBox2;
         private TextBox AdressTeacherTxt;
@@ -1225,5 +1271,9 @@
         private Button FindEditTeacherBtn;
         private TextBox TIDEditTeacherTxt;
         private Button AddTeacherbtn;
+        private Label label17;
+        private ComboBox courseTxt;
+        private Label label18;
+        private CheckedListBox courseBox;
     }
 }

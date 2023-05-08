@@ -14,9 +14,11 @@ namespace GUI
     public partial class teacherForm : Form
     {
         public string ID = "CST-0002";
+        public Teacher t=new Teacher();
         public teacherForm()
         {
             InitializeComponent();
+
         }
         public teacherForm(string ID)
         {
@@ -72,16 +74,25 @@ namespace GUI
                 else
                 {
                     genderTxt.Text = "Female";
-
                 }
 
 
             }
             //SET DATAGRID VIEW TO TIMETABLE
             dataGridView1.DataSource = ShowTimetable(teachers[index].getDepName());
-
-
+            //SET DATAGRID VIEW FOR MARKS AND ATTENDANCE           
+            dataGridView2.DataSource = ShowMarks(teachers[index].getCourse());
+            t = teachers[index];
         }
+
+        // STORE THE UPGRADED QUIZ MARKS IN THE CSV FILE
+        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {            
+            DataTable table=(DataTable)dataGridView2.DataSource;
+            WriteMarksToCsv(t.getCourse(), table);
+            MessageBox.Show("MARKS UPDATED","UPDATED");
+        }
+
 
         private void QualificationTeacherTxt_TextChanged(object sender, EventArgs e)
         {
@@ -92,5 +103,13 @@ namespace GUI
         {
 
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable p = (DataTable)dataGridView1.DataSource;
+            dataGridView2.DataSource = p;
+        }
+
+       
     }
 }

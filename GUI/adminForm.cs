@@ -210,9 +210,42 @@ namespace GUI
                 WriteStudentsToCsv(stdFile, students);
                 WriteUsernamePassToTxt(loginFile, std);
                 MessageBox.Show("Student Added Successfully", "SUCESS");
+                //ADD STUDENT TO COURSE FILE
+                foreach (var item in courseBox.CheckedItems)
+                {
+                    if (item.ToString() == "DLD")
+                    {
+                        WriteUsernameToMarks(marksFile + "DLD.csv", std.getRollNo());
+
+                    }
+                    if (item.ToString() == "PF")
+                    {
+                        WriteUsernameToMarks(marksFile + "PF.csv", std.getRollNo());
+                    }
+                    if (item.ToString() == "Linear Algebra")
+                    {
+                        WriteUsernameToMarks(marksFile + "LA.csv", std.getRollNo());
+                    }
+                    if (item.ToString() == "Calculus")
+                    {
+                        WriteUsernameToMarks(marksFile + "Calculus.csv", std.getRollNo());
+                    }
+                    if (item.ToString() == "OOP")
+                    {
+                        WriteUsernameToMarks(marksFile + "OOP.csv", std.getRollNo());
+                    }
+                }
+
+
             }
 
+
+
         }
+
+
+
+
         private void addStdBtn_Click(object sender, EventArgs e)
         {
             AddStudent();
@@ -307,6 +340,7 @@ namespace GUI
                 t.setAddress(AdressTeacherTxt.Text);
                 t.setSalary(salaryTxt.Text);
                 t.setRegDate(DateTime.Now.ToString("dd/MM/yyyy"));
+                t.setCourse(courseTxt.SelectedItem.ToString());
                 teachers.Add(t);
                 WriteTeachersToCsv(teacherFile, teachers);
                 WriteUsernamePassToTxt(teacherLoginFile, t);

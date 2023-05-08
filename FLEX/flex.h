@@ -116,9 +116,11 @@ class CLASS_DECLSPEC Teacher : public Person
 	string department;
 	string TID;
 	string salary;
+	string course;
 public:
 	Teacher(string = "", string = "", string = "", string = "", string = "", char = NULL, string = "", string = "", string = "",string="");
-	
+	void setCourse(string);
+	string getCourse();
 	void setTID(string);
 	string getTID();
 	void setSalary(string);

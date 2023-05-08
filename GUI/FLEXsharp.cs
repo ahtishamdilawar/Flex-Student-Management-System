@@ -15,8 +15,8 @@ namespace General
         public static string loginFile = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\stdlogin.txt";
         public static string teacherFile = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\teacher.csv";
         public static string teacherLoginFile = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\teacherlogin.txt";
-        public static string marksFile = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\Data\\";
-
+        public static string marksFile = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\Marks\\";
+        public static string dldFile= "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\Marks\\DLD.csv";
         //TIMETABLE CLASS
         public class Timetable
         {
@@ -68,7 +68,6 @@ namespace General
         {
             public string rollNo;
             public string courseName;
-
             public char grade;
             public int marks;
             public Course()
@@ -77,16 +76,20 @@ namespace General
                 courseName = string.Empty;               
                 grade = 'I';
                 marks = 0;
-            }         
-            
+            }
+
 
         }
         //
+        
+
+
         //MARKS
-        public static DataTable ShowMarks(string rollNo,string depName)
+        public static DataTable ShowMarks(string course)
         {
             DataTable dataTable = new DataTable();
-            using (TextFieldParser parser = new TextFieldParser(marksFile+depName+".csv"))
+            course=course+".csv";
+            using (TextFieldParser parser = new TextFieldParser(marksFile+course))
             {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
@@ -101,17 +104,36 @@ namespace General
                 }
                 while (!parser.EndOfData)
                 {
-                    string[] fields = parser.ReadFields();
-                    if (fields[0] == rollNo)
-                    {
-                        dataTable.Rows.Add(fields);
-                    }
+                    string[] fields = parser.ReadFields();                   
+                        dataTable.Rows.Add(fields);                   
                 }
             }
             return dataTable;
         }
-    
+        
+        public static void WriteMarksToCsv(string course,DataTable table)
+        {
+            string filePath = marksFile + course + ".csv";
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                // Write the column headers
+                foreach (DataColumn column in table.Columns)
+                {
+                    writer.Write($"{column.ColumnName},");
+                }
+                writer.WriteLine();
 
+                // Write the rows
+                foreach (DataRow row in table.Rows)
+                {
+                    foreach (var item in row.ItemArray)
+                    {
+                        writer.Write($"{item},");
+                    }
+                    writer.WriteLine();
+                }
+            }
+        }
 
 
 
@@ -128,7 +150,7 @@ namespace General
             for (int i = 1; i < lines.Length; i++)
             {
                 string[] fields = lines[i].Split(',');
-                if (fields.Length < 11)
+                if (fields.Length <= 11)
                 {
                     Teacher t = new Teacher();
                     t.setTID(fields[0]);
@@ -141,6 +163,7 @@ namespace General
                     t.setQualification(fields[7]);
                     t.setSalary(fields[8]);
                     t.setRegDate(fields[9]);
+                    t.setCourse(fields[10]);
                     teachers.Add(t);
                 }
                 else
@@ -156,12 +179,12 @@ namespace General
         {
             using (StreamWriter writer = new StreamWriter(filename))
             {
-                writer.WriteLine("TID,First Name,Last Name,Department Name,Gender,Contact Number,Address,Qualification,Salary,Registration Date");
+                writer.WriteLine("TID,First Name,Last Name,Department Name,Gender,Contact Number,Address,Qualification,Salary,Registration Date,Course");
 
                 foreach (Teacher s in teachers)
                 {
 
-                    writer.WriteLine($"{s.getTID()},{s.getFirstName()},{s.getLastName()},{s.getDepName()},{s.getGender()},{s.getContactNo()},{s.getAddress()},{s.getQualification()},{s.getSalary()},{s.getRegDate()}");
+                    writer.WriteLine($"{s.getTID()},{s.getFirstName()},{s.getLastName()},{s.getDepName()},{s.getGender()},{s.getContactNo()},{s.getAddress()},{s.getQualification()},{s.getSalary()},{s.getRegDate()},{s.getCourse()}");
                 }
             }
         }
@@ -262,7 +285,7 @@ namespace General
                     s.setBloodGroup(fields[8]);
                     s.setFeeStatus(isPaid(fields[9]));
                     s.setRegDate(fields[10]);
-
+                    
                     students.Add(s);
                 }
                 else
@@ -413,6 +436,13 @@ namespace General
                 writer.WriteLine($"{std.getUserName()},{std.getPassword()}");
             }
         }
-
+        //WRITE USERNAME TO RESPECTIVE COURSE MARKS
+        public static void WriteUsernameToMarks(string filename, string rollNo)
+        {
+            using (StreamWriter writer = new StreamWriter(filename,true))
+            {
+                writer.WriteLine($"{rollNo}");
+            }
+        }
     }
 }

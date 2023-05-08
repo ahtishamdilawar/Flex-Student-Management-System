@@ -209,7 +209,14 @@ string Teacher::getSalary()
 {
 	return salary;
 }
-
+string Teacher:: getCourse()
+{
+	return course;
+}
+void Teacher::setCourse(string course)
+{
+	this->course = course;
+}
 Administrator::Administrator() :Person()
 {
 

@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="FLEX.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
+    <None Update="FLEX.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

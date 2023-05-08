@@ -2097,6 +2097,32 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Teacher__SWIG_10() {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_Teacher_setCourse(void * jarg1, const char * jarg2) {
+  Teacher *arg1 = (Teacher *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = (Teacher *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  (&arg2)->assign(jarg2); 
+  (arg1)->setCourse(arg2);
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_Teacher_getCourse(void * jarg1) {
+  const char * jresult ;
+  Teacher *arg1 = (Teacher *) 0 ;
+  std::string result;
+  
+  arg1 = (Teacher *)jarg1; 
+  result = (arg1)->getCourse();
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_Teacher_setTID(void * jarg1, const char * jarg2) {
   Teacher *arg1 = (Teacher *) 0 ;
   std::string arg2 ;

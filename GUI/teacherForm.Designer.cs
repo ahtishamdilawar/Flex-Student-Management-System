@@ -51,11 +51,14 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             tabPage3 = new TabPage();
+            dataGridView2 = new DataGridView();
             tabPage4 = new TabPage();
             tabControl.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // tabControl
@@ -289,10 +292,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(6, 71);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(563, 296);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // label1
             // 
@@ -306,12 +309,23 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dataGridView2);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(575, 373);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Marks And Grade";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(0, 89);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(572, 281);
+            dataGridView2.TabIndex = 0;
+            dataGridView2.CellValueChanged += dataGridView2_CellValueChanged;
             // 
             // tabPage4
             // 
@@ -339,6 +353,8 @@
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -367,5 +383,6 @@
         private TextBox genderTxt;
         private Label label1;
         private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
     }
 }

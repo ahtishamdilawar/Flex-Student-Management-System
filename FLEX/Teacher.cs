@@ -89,6 +89,16 @@ public class Teacher : Person {
   public Teacher() : this(FLEXPINVOKE.new_Teacher__SWIG_10(), true) {
   }
 
+  public void setCourse(string arg0) {
+    FLEXPINVOKE.Teacher_setCourse(swigCPtr, arg0);
+    if (FLEXPINVOKE.SWIGPendingException.Pending) throw FLEXPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public string getCourse() {
+    string ret = FLEXPINVOKE.Teacher_getCourse(swigCPtr);
+    return ret;
+  }
+
   public void setTID(string arg0) {
     FLEXPINVOKE.Teacher_setTID(swigCPtr, arg0);
     if (FLEXPINVOKE.SWIGPendingException.Pending) throw FLEXPINVOKE.SWIGPendingException.Retrieve();
