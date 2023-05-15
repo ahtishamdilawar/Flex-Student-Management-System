@@ -235,8 +235,31 @@ namespace GUI
                         WriteUsernameToMarks(marksFile + "OOP.csv", std.getRollNo());
                     }
                 }
+                //ADD student to attendance file
+                foreach (var item in courseBox.CheckedItems)
+                {
+                    if (item.ToString() == "DLD")
+                    {
+                        WriteRollNoNameToAttendance(attendanceFile + "DLDA.csv", std.getRollNo(), std.getFirstName() + " " + std.getLastName());
 
-
+                    }
+                    if (item.ToString() == "PF")
+                    {
+                        WriteRollNoNameToAttendance(attendanceFile + "PFA.csv", std.getRollNo(), std.getFirstName() + " " + std.getLastName());
+                    }
+                    if (item.ToString() == "Linear Algebra")
+                    {
+                        WriteRollNoNameToAttendance(attendanceFile + "LAA.csv", std.getRollNo(), std.getFirstName() + " " + std.getLastName());
+                    }
+                    if (item.ToString() == "Calculus")
+                    {
+                        WriteRollNoNameToAttendance(attendanceFile + "CalculusA.csv", std.getRollNo(), std.getFirstName() + " " + std.getLastName());
+                    }
+                    if (item.ToString() == "OOP")
+                    {
+                        WriteRollNoNameToAttendance(attendanceFile + "OOPA.csv", std.getRollNo(), std.getFirstName() + " " + std.getLastName());
+                    }
+                }
             }
 
 
@@ -499,6 +522,13 @@ namespace GUI
         private void depBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }

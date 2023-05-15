@@ -126,6 +126,7 @@
             label1 = new Label();
             FindEditTeacherBtn = new Button();
             TIDEditTeacherTxt = new TextBox();
+            pictureBox1 = new PictureBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -141,6 +142,7 @@
             tabPage6.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // viewCombo
@@ -1130,11 +1132,23 @@
             TIDEditTeacherTxt.Size = new Size(131, 27);
             TIDEditTeacherTxt.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(537, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 44);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // adminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(613, 418);
+            Controls.Add(pictureBox1);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -1168,6 +1182,7 @@
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1275,5 +1290,6 @@
         private ComboBox courseTxt;
         private Label label18;
         private CheckedListBox courseBox;
+        private PictureBox pictureBox1;
     }
 }

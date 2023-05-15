@@ -40,6 +40,8 @@ namespace GUI
             txtpassword = new TextBox();
             lblforgor = new Label();
             btnlogin = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblusername
@@ -47,7 +49,7 @@ namespace GUI
             lblusername.AutoSize = true;
             lblusername.BackColor = Color.FromArgb(224, 224, 224);
             lblusername.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblusername.Location = new Point(114, 87);
+            lblusername.Location = new Point(30, 122);
             lblusername.Name = "lblusername";
             lblusername.Size = new Size(73, 17);
             lblusername.TabIndex = 0;
@@ -59,7 +61,7 @@ namespace GUI
             lblpassword.AutoSize = true;
             lblpassword.BackColor = Color.FromArgb(224, 224, 224);
             lblpassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblpassword.Location = new Point(117, 129);
+            lblpassword.Location = new Point(33, 164);
             lblpassword.Name = "lblpassword";
             lblpassword.Size = new Size(70, 17);
             lblpassword.TabIndex = 1;
@@ -67,14 +69,14 @@ namespace GUI
             // 
             // txtusername
             // 
-            txtusername.Location = new Point(214, 81);
+            txtusername.Location = new Point(130, 116);
             txtusername.Name = "txtusername";
             txtusername.Size = new Size(135, 23);
             txtusername.TabIndex = 2;
             // 
             // txtpassword
             // 
-            txtpassword.Location = new Point(214, 128);
+            txtpassword.Location = new Point(130, 163);
             txtpassword.Name = "txtpassword";
             txtpassword.PasswordChar = '*';
             txtpassword.Size = new Size(135, 23);
@@ -84,7 +86,7 @@ namespace GUI
             // 
             lblforgor.AutoSize = true;
             lblforgor.Font = new Font("Segoe UI", 8.25F, FontStyle.Underline, GraphicsUnit.Point);
-            lblforgor.Location = new Point(278, 154);
+            lblforgor.Location = new Point(194, 189);
             lblforgor.Name = "lblforgor";
             lblforgor.Size = new Size(99, 13);
             lblforgor.TabIndex = 4;
@@ -94,7 +96,7 @@ namespace GUI
             // 
             // btnlogin
             // 
-            btnlogin.Location = new Point(214, 184);
+            btnlogin.Location = new Point(130, 219);
             btnlogin.Name = "btnlogin";
             btnlogin.Size = new Size(110, 26);
             btnlogin.TabIndex = 5;
@@ -102,12 +104,23 @@ namespace GUI
             btnlogin.UseVisualStyleBackColor = true;
             btnlogin.Click += btnlogin_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(304, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(518, 423);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(468, 381);
+            ClientSize = new Size(834, 447);
+            Controls.Add(pictureBox1);
             Controls.Add(btnlogin);
             Controls.Add(lblforgor);
             Controls.Add(txtpassword);
@@ -121,6 +134,7 @@ namespace GUI
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Flex Management System";
             TransparencyKey = Color.FromArgb(64, 64, 64);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +147,6 @@ namespace GUI
         private TextBox txtpassword;
         private Label lblforgor;
         private Button btnlogin;
+        private PictureBox pictureBox1;
     }
 }

@@ -1,20 +1,6 @@
 Roll Number,First Name,Last Name,Department Name,Gender,Contact Number,Address,Qualification,Blood Group,Fee Status,Registration Date
-CS-0001,Ahmad,Ali,Computer Science,M,12355,ROMAN K GHAR,FSC,A-,Not Paid,12/12/2002
-CS-0002,Azlan,Ashfaq,Computer Science,M,2351234,New York,Alevels,A+,Not Paid,5/5/2023
-CS-0003,Mohid,Fraud,Computer Science,M,30555555,Chichu ki malian,ICs,AB+,Not Paid,5/5/2023
-CS-0004,ww,ww,Computer Science,M,ww,www,ww,AB-,Not Paid,5/5/2023
-CS-0005,ss,ss,Computer Science,F,ss,ss,ss,O-,Paid,5/5/2023
-CS-0006,ss,ss,Computer Science,M,ss,ss,ss,O+,Paid,5/5/2023
-CS-0007,Irfan ,Junejo,Computer Science,M,233333,Karachi,N/A,O+,Paid,6/5/2023
-CS-0008,Patrick,Bateman,Computer Science,F,987228,New York,Fsc,B+,Not Paid,6/5/2023
-CS-0009,Roman,Kertify,Computer Science,F,68686868,Apny Ghar,Serial Kisser,AB-,Paid,6/5/2023
-CS-0010,kert,lora,Computer Science,M,sdsad,sdsds,sd,B+,Paid,6/5/2023
-CS-0011,kertify,lora,Computer Science,M,sdsad,sdsds,sd,B+,Paid,6/5/2023
-EE-0001,Aslam,Ali,Electric Engineering,M,23333333,New York,A-Levels,B+,Paid,6/5/2023
-CS-0012,s,s,Computer Science,M,s,s,s,A+,Paid,6/5/2023
-CS-0013,a,a,Computer Science,F,a,a,a,B+,Paid,6/5/2023
-EE-0002,aslam,asd,Electric Engineering,M,as,asd,asd,B+,Paid,8/5/2023
-SS-0001,Ikrma,masali,Social Sciences,F,pooper,sdsd,sds,A-,Paid,08/05/2023
-CS-0014,sd,sd,Computer Science,M,sds,sd,sd,B-,Paid,08/05/2023
-CS-0015,sad,d,Computer Science,F,d,d,d,B+,Not Paid,08/05/2023
-SE-0001,Aliu,OLA,Software Engineering,M,asd,asd,asd,A-,Paid,08/05/2023
+CS-0001,John ,Wick,Computer Science,M,03052345656,Continental,FSc,A+,Paid,15/05/2023
+EE-0001,Emma ,Stone,Electric Engineering,F,23232323,New york,Matric,A+,Not Paid,15/05/2023
+EE-0002,Ali ,Ahmad,Electric Engineering,M,23232323,Maku Ana,A-Levels,A+,Not Paid,15/05/2023
+SE-0001,Ashfaq,Ahmad,Software Engineering,F,2323,Lahore,Matric,O+,Not Paid,15/05/2023
+B-0001,Ashfaq,Ahmad,Business,F,121323123,LOR,FSC,A+,Not Paid,15/05/2023

@@ -9,7 +9,7 @@ namespace GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new teacherForm());
+            Application.Run(new LoginForm());
         }
     }
 }

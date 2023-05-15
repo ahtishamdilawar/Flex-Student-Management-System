@@ -13,16 +13,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
-
+using static General.FLEXsharp;
 namespace GUI
 {
     public partial class studentForm : Form
     {
-        public string std = "";
+        public string RollNo = "";
         public studentForm(string student)
         {
             InitializeComponent();
-            std = student;
+            RollNo = student;
         }
         public studentForm()
         {
@@ -34,107 +34,11 @@ namespace GUI
 
         }
 
-        //public JsonSerializer GetSerializer()
-        //{
-        //    var settings = new JsonSerializerSettings();
-        //    settings.ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor;
-        //    settings.ContractResolver = new ContractResolverWithPrivates();
-
-        //    serializer = JsonSerializer.Create(settings);
-        //}
-
-
-        //public void AppendToCsv(Student student, string filePath)
-        //{
-        //    // Open the file for appending
-        //    using (StreamWriter sw = new StreamWriter(filePath, true))
-        //    {
-        //        // Write the student data as a CSV string
-        //        string csvLine = $"{student.getRollNo()},{student.getFirstName()},{student.getLastName()},{student.getDepName()},{student.getGender()},{student.getContactNo()},{student.getAddress()},{student.getQualification()},{student.getBloodGroup()},{student.getFeeStatus()},{student.getRegDate()}";
-        //        sw.WriteLine(csvLine);
-        //    }
-        //}
-        //USED TO CONVERT PAID OR NOT PAID TO BOOLEAN
-
-
-
-
-        //public Student ReadFromCsv(string filePath, string rollNo)
-        //{
-        //    // Open the file for reading
-        //    using (TextFieldParser parser = new TextFieldParser(filePath))
-        //    {
-        //        parser.TextFieldType = FieldType.Delimited;
-        //        parser.SetDelimiters(",");
-
-        //        // Read each line until we find the student with the specified roll number
-        //        while (!parser.EndOfData)
-        //        {
-        //            string[] fields = parser.ReadFields();
-
-        //            if (fields[0] == rollNo)
-        //            {
-
-        //                // Create a new student object from the CSV data
-        //                Student student = new Student();
-        //                student.setRollNo(fields[0]);
-        //                student.setFirstName(fields[1]);
-        //                student.setLastName(fields[2]);
-        //                student.setDepName(fields[3]);
-        //                student.setGender(Convert.ToChar(fields[4]));
-        //                student.setContactNo(fields[5]);
-        //                student.setAddress(fields[6]);
-        //                student.setQualification(fields[7]);
-        //                student.setBloodGroup(fields[8]);
-        //                student.setFeeStatus(Convert.ToBoolean(isPaid(fields[9])));
-        //                student.setRegDate(fields[10]);
-        //                return student;
-        //            }
-        //        }
-
-        //        // Student with specified roll number not found
-        //        return null;
-        //    }
-        //}
-        public static List<Student> ReadStudentsFromCsv(string filename)
-        {
-            List<Student> students = new List<Student>();
-            string[] lines = File.ReadAllLines(filename);
-            for (int i = 1; i < lines.Length; i++)
-            {
-                string[] fields = lines[i].Split(',');
-                Student s = new Student();
-                s.setRollNo(fields[0]);
-                s.setFirstName(fields[1]);
-                s.setLastName(fields[2]);
-                s.setDepName(fields[3]);
-                if (fields[4].Length > 0)
-                {
-                    s.setGender(fields[4][0]);
-                }
-                s.setContactNo(fields[5]);
-                s.setAddress(fields[6]);
-                s.setQualification(fields[7]);
-                s.setBloodGroup(fields[8]);
-               // s.setFeeStatus(isPaid(fields[9]));
-                s.setRegDate(fields[10]);
-                students.Add(s);
-            }
-            return students;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // Student student = new Student();
-            // student.setFirstName(textBox1.Text);
-            string filename = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\student.csv";
-            //AppendToCsv(student, filename);
-            List<Student> students = new List<Student>();
-            students = ReadStudentsFromCsv(filename);
-            MessageBox.Show(students[1].getRegDate());
-            //student = ReadFromCsv(filename, "123");
-            button1.Text = students[1].getFirstName();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -146,33 +50,180 @@ namespace GUI
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            //Student student = new Student();
-            // student.setFirstName(textBox1.Text);
-            string filename = "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\student.csv";
-            //AppendToCsv(student, filename);
-            List<Student> students = new List<Student>();
-            students = ReadStudentsFromCsv(filename);
-           MessageBox.Show(students[0].getRegDate());
-            //student = ReadFromCsv(filename, "123");
-            button1.Text = students[1].getFirstName();
-            Student s = new Student();
-            s.setFirstName("BONDU222");
-            s.setGender('M');
-            s.setLastName("BON22D");
-            s.setDepName("CS2");
-            s.setContactNo("12342256789");
-            s.setAddress("KARAC2222HI");
-            s.setQualification("BS22CS");
-            s.setBloodGroup("B22+");
-            s.setRollNo("12223");
-            s.setRegDate("12/22212/2012");
-            students.Add(s);            
-          //  WriteStudentsToCsv(filename, students);
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void studentForm_Load(object sender, EventArgs e)
+        {
+            //DISPLAY ALL DATA OF Student
+            List<Student> students = ReadStudentsFromCsv();
+            bool check = false;
+            int index = 0;
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].getRollNo() == RollNo)
+                {
+                    check = true;
+                    index = i;
+                    break;
+                }
+            }
+            if (!check)
+            {
+                MessageBox.Show("Student not found");
+                this.Close();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                FNameTeacherTxt.Text = students[index].getFirstName();
+                lastNameTeacherTxt.Text = students[index].getLastName();
+                ContactTeacherTxt.Text = students[index].getContactNo();
+                DepTeacherTxt.Text = students[index].getDepName();
+                QualificationTeacherTxt.Text = students[index].getQualification();
+                AdressTeacherTxt.Text = students[index].getAddress();
+                bloodGrptxt.Text = students[index].getBloodGroup();
+                if (students[index].getGender() == 'M')
+                {
+                    genderTxt.Text = "Male";
+                }
+                else
+                {
+                    genderTxt.Text = "Female";
+                }
+                setAttendanceComboBox();
+                setmarksComboBox();
+                setRegisteredCourse();
+                if (students[index].getFeeStatus() == "Paid")
+                {
+                    label2.Text = "Paid";
+                }
+                else
+                {
+                    label2.Text = "Not Paid";
+                }
+                //attendanceCourseBox.SelectedIndex = 0;
+            }
+
+
+        }
+
+        bool checkRollNo(string rollNo, string filepath)
+        {
+            StreamReader sr = new StreamReader(filepath);
+            string line = sr.ReadLine();
+            while (line != null)
+            {
+                string[] arr = line.Split(',');
+                if (arr[0] == rollNo)
+                {
+                    return true;
+                }
+                line = sr.ReadLine();
+            }
+            return false;
+        }
+
+        void setRegisteredCourse()
+        {
+            if (checkRollNo(RollNo, marksFile + "DLD.csv"))
+            {
+                label1.Text = "DLD";
+            }
+            if (checkRollNo(RollNo, marksFile + "OOP.csv"))
+            {
+                label1.Text += "\nOOP";
+            }
+            if (checkRollNo(RollNo, marksFile + "Calculus.csv"))
+            {
+                label1.Text += "\nCalculus";
+            }
+            if (checkRollNo(RollNo, marksFile + "LA.csv"))
+            {
+                label1.Text += "\nLA";
+            }
+            if (checkRollNo(RollNo, marksFile + "PF.csv"))
+            {
+                label1.Text += "\nPF";
+            }
+        }
+
+        void setmarksComboBox()
+        {
+
+            if (checkRollNo(RollNo, marksFile + "DLD.csv"))
+            {
+                marksCourseBox.Items.Add("DLD");
+            }
+            if (checkRollNo(RollNo, marksFile + "OOP.csv"))
+            {
+                marksCourseBox.Items.Add("OOP");
+            }
+            if (checkRollNo(RollNo, marksFile + "Calculus.csv"))
+            {
+                marksCourseBox.Items.Add("Calculus");
+            }
+            if (checkRollNo(RollNo, marksFile + "LA.csv"))
+            {
+                marksCourseBox.Items.Add("LA");
+            }
+            if (checkRollNo(RollNo, marksFile + "PF.csv"))
+            {
+                marksCourseBox.Items.Add("PF");
+            }
+        }
+        void setAttendanceComboBox()
+        {
+
+            if (checkRollNo(RollNo, attendanceFile + "DLDA.csv"))
+            {
+                attendanceCourseBox.Items.Add("DLD");
+            }
+            if (checkRollNo(RollNo, attendanceFile + "OOPA.csv"))
+            {
+                attendanceCourseBox.Items.Add("OOP");
+            }
+            if (checkRollNo(RollNo, attendanceFile + "CalculusA.csv"))
+            {
+                attendanceCourseBox.Items.Add("Calculus");
+            }
+            if (checkRollNo(RollNo, attendanceFile + "LAA.csv"))
+            {
+                attendanceCourseBox.Items.Add("LA");
+            }
+            if (checkRollNo(RollNo, attendanceFile + "PFA.csv"))
+            {
+                attendanceCourseBox.Items.Add("PF");
+            }
+        }
+
+        private void attendanceCourseBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = AttendanceTableRollNo(attendanceCourseBox.SelectedItem.ToString(), RollNo);
+        }
+
+        private void marksCourseBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView4.DataSource = MarksRollNo(marksCourseBox.SelectedItem.ToString(), RollNo);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
+
 }

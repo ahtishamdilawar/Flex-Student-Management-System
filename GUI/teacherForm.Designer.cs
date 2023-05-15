@@ -53,12 +53,18 @@
             tabPage3 = new TabPage();
             dataGridView2 = new DataGridView();
             tabPage4 = new TabPage();
+            dataGridView3 = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
+            pictureBox1 = new PictureBox();
             tabControl.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tabControl
@@ -67,10 +73,10 @@
             tabControl.Controls.Add(tabPage2);
             tabControl.Controls.Add(tabPage3);
             tabControl.Controls.Add(tabPage4);
-            tabControl.Location = new Point(12, 12);
+            tabControl.Location = new Point(12, 33);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(583, 401);
+            tabControl.Size = new Size(583, 380);
             tabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -94,7 +100,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(575, 373);
+            tabPage1.Size = new Size(575, 352);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Home";
             tabPage1.UseVisualStyleBackColor = true;
@@ -279,7 +285,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(575, 373);
+            tabPage2.Size = new Size(575, 352);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "View TimeTable";
             tabPage2.UseVisualStyleBackColor = true;
@@ -292,10 +298,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(6, 71);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(563, 296);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // label1
             // 
@@ -312,39 +318,78 @@
             tabPage3.Controls.Add(dataGridView2);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(575, 373);
+            tabPage3.Size = new Size(575, 352);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Marks And Grade";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(0, 89);
+            dataGridView2.Location = new Point(3, 94);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(572, 281);
+            dataGridView2.Size = new Size(569, 276);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellValueChanged += dataGridView2_CellValueChanged;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(dataGridView3);
+            tabPage4.Controls.Add(dateTimePicker1);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(575, 373);
+            tabPage4.Size = new Size(575, 352);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Attendance";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(3, 105);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowTemplate.Height = 25;
+            dataGridView3.ShowEditingIcon = false;
+            dataGridView3.Size = new Size(569, 265);
+            dataGridView3.TabIndex = 1;
+            dataGridView3.CellValueChanged += dataGridView3_CellValueChanged;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(168, 40);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 0;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(514, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 44);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // teacherForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(607, 425);
+            Controls.Add(pictureBox1);
             Controls.Add(tabControl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "teacherForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Teacher Home";
             Load += teacherForm_Load;
             tabControl.ResumeLayout(false);
@@ -355,6 +400,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -384,5 +432,8 @@
         private Label label1;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
+        private DataGridView dataGridView3;
+        private DateTimePicker dateTimePicker1;
+        private PictureBox pictureBox1;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static General.FLEXsharp;
 
 namespace GUI
 {
@@ -47,7 +48,7 @@ namespace GUI
             try
             {
 
-                
+
                 if (txtusername.Text == "")
                 {
                     MessageBox.Show("Please, Enter UserName !!", "Error");
@@ -58,18 +59,28 @@ namespace GUI
                     MessageBox.Show("Please, Enter Password !!", "Error");
 
                 }
-                else if (VerifyLogin(user, "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\stdlogin.txt"))
+                else if (VerifyLogin(user, loginFile))
                 {
-                    MessageBox.Show("Login Successful", "Login");                   
-                    studentForm std = new studentForm();
-                    
+                    MessageBox.Show("Login Successful", "Login");
+                    studentForm std = new studentForm(txtusername.Text);
                     this.Hide();
                     std.Show();
                 }
-                else if(check = VerifyLogin(user, "E:\\OOP SEM PROJECT\\FLEX\\GUI\\text\\teacherlogin.txt"))
+                else if (check = VerifyLogin(user, teacherLoginFile))
                 {
                     MessageBox.Show("Login Successful", "Login");
-                    
+                    teacherForm tch = new teacherForm(txtusername.Text);
+                    this.Hide();
+                    tch.Show();
+
+
+                }
+                else if (txtusername.Text == "admin" && txtpassword.Text == "admin")
+                {
+                    MessageBox.Show("Login Successful", "Login");
+                    adminForm adm = new adminForm();
+                    this.Hide();
+                    adm.Show();
                 }
                 else
                 {
@@ -78,7 +89,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(),"Error");
+                MessageBox.Show(ex.Message.ToString(), "Error");
             }
 
         }
@@ -86,7 +97,7 @@ namespace GUI
 
         private void lblforgor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please contact your administrator","Forgot Password");
+            MessageBox.Show("Please contact your administrator", "Forgot Password");
         }
 
         private void lblforgor_MouseHover(object sender, EventArgs e)
